@@ -59,12 +59,44 @@ bash
 ![요일 출력 실행 화면](./images/day_re.png)
 
 ### **📌 3주차 - DartPad 실습**
-#### 1️⃣ **구구단 출력**
-- 2단부터 9단까지 출력하는 프로그램 작성  
-- 중첩 for 문을 활용하여 구현  
-👉 **실습 코드:** gugudan.dart
+#### 1️⃣ 클래스와 객체
+- Person 클래스를 정의하고, 객체를 생성하여 이름과 나이를 저장
+- addOneYear() 메서드를 통해 나이를 1 증가시키는 기능 포함
+- 객체에 직접 접근해 값 설정 및 출력
+
+👉 **실습 코드:** person.dart
 
 🖥 **실행 결과:**  
-![구구단 실행 화면](./images/gugudan_re.png)
+[김양군, 7]
 
 ---
+
+#### 2️⃣ 실습1을 수정 게터/세터와 캡슐화
+- 클래스 필드 앞에 _를 붙여 외부 접근을 제한하는 Dart 스타일 적용
+- 생성자에서 필드 초기화 (Person(this._name, this._age, this._desc))
+- get, set을 사용하여 필드에 안전하게 접근하거나 수정
+- 직접 접근을 막고, 메서드를 통해 값 변경 (addOneYear())
+
+👉 **실습 코드:** person2.dart
+
+🖥 **실행 결과:**  
+[김양군, 7, 김양군은 귀엽다!!!]
+[김양군, 8, 아니다 우주최강 귀엽다!!!]
+
+---
+
+#### 3️⃣ 명명된 매개변수와 nullable 타입
+- Dart에서 Person({this.name, this.age}) 형태로 명명된 매개변수 사용
+- String?, int?로 nullable 타입을 지정하여 null 값 허용
+- 객체 생성 시 일부 값만 전달하거나, 아예 전달하지 않는 것도 가능
+
+👉 **실습 코드:** person_named_params.dart
+
+🖥 **실행 결과(출력 생략됨):**  
+p: name → null, age → null
+p2: name → '김양군', age → null
+p3: name → null, age → 7
+p4: name → '김양군', age → 7
+
+---
+
