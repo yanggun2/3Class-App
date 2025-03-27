@@ -1,0 +1,37 @@
+/*
+ * 상속
+ */
+
+class Hero {
+  String name = '영웅';
+
+  void run() {
+    print('뛴다');
+  }
+}
+
+class SuperHero extends Hero {
+  @override
+  void run() {
+    super.run(); //부모 클래스의 run 실행
+    this.fly();
+  }
+
+  void fly() {
+    print('난다!');
+  }
+}
+
+/*
+ * 1. SuperHero의 run이 실행
+ * 2. SuperHero의 run 안에서 부모 클래스의 run 실행 (뛴다)
+ * 3. 다음 순서인 SuperHero의 run 안에서 fly 실행 (난다!)
+ * 4. hero.name 출력 (영웅)
+ */
+
+void main() {
+  var hero = SuperHero();
+  hero.run(); //SuperHero의 run이 실행됨
+  //hero.fly();
+  print(hero.name);
+}
