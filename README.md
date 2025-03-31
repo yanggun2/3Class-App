@@ -196,3 +196,30 @@ Status.logout 로그아웃
 🖥 **실행 결과:**
 왼쪽! 오른쪽! 왼쪽! 오른쪽! 1 2 3 4 5
 
+---
+
+### **📌 4주차 - 프로젝트 구조와 앱 구조**
+
+#### 1️⃣ 개발 환경 구성 및 프로젝트 구조 이해
+- **Flutter SDK 및 Android Studio 설치**
+  - Flutter SDK 다운로드: [https://docs.flutter.dev/release/archive](https://docs.flutter.dev/release/archive)
+  - 설치 가이드: [Flutter 설치 (Windows/데스크탑)](https://docs.flutter.dev/get-started/install/windows/desktop)
+  - SDK 업그레이드: `flutter upgrade`
+  
+- **Android Studio 설치**
+  - 다운로드: [https://developer.android.com/studio?hl=ko](https://developer.android.com/studio?hl=ko)
+
+- **Flutter 프로젝트 생성 및 구조 이해**
+  - 기본 폴더: `lib`, `android`, `ios`, `test`, `pubspec.yaml` 등
+  - 주요 진입점: `main.dart`
+  - `MaterialApp`, `Scaffold`, `AppBar`, `body` 등 기본 위젯 구조 학습
+
+- **핫 리로드(Hot Reload)**
+  - 앱 상태를 유지하면서 UI 변경사항을 빠르게 반영
+  - `Ctrl + S` 또는 단축키로 즉시 화면 반영 가능
+
+👉 **실습 중심 내용:** 앱 프로젝트를 만들고 구조를 파악하며, 위젯과 코드를 수정하며 핫 리로드 실습
+
+🖥 **실습 코드:** 없음 (환경 구성 및 구조 이해 중심)
+
+
