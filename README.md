@@ -222,4 +222,24 @@ Status.logout 로그아웃
 
 🖥 **실습 코드:** 없음 (환경 구성 및 구조 이해 중심)
 
+#### 2️⃣ 샘플 앱 구조 분석
+
+- **Flutter 기본 템플릿 앱(Counter App) 분석**
+  - `main.dart` 파일을 중심으로 앱 실행 흐름 분석
+  - `MyApp`, `MyHomePage` 클래스 구조 이해
+  - `StatefulWidget`과 `setState()`의 역할 확인
+  - `Scaffold`, `AppBar`, `FloatingActionButton`, `Text` 위젯 등 구성 요소 분석
+
+- **핵심 위젯 기능 분석**
+  - `setState()`를 사용한 상태 변경과 UI 반영
+  - `FloatingActionButton` 클릭 시 `counter` 변수 증가
+  - 위젯 트리 구조와 재렌더링 이해
+
+- **분석 포인트**
+  - 위젯의 트리 구조 이해 (자식 → 부모 → 전체 구조)
+  - 상태를 어떻게 보관하고, 변경하며, UI에 반영되는지 학습
+  - 코드 흐름과 각 구성 요소의 역할 분해
+
+👉 **실습 코드:** 기본 `main.dart` 템플릿 분석  
+🖥 **실행 결과:** 버튼 클릭 시 숫자가 증가하는 카운터 앱
 
