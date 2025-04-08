@@ -260,4 +260,97 @@ Status.logout 로그아웃
 
 ---
 
+### **📌 5주차 - Flutter 위젯 실습**
+
+다양한 Flutter 기본 위젯을 실습하며 UI 구성 방식과 위젯의 특성을 익히는 실습을 진행함.
+
+👉 **실습 코드:** 0407.dart
+
+---
+
+#### 1️⃣ **Column과 Row를 활용한 배치 실습**
+- 세 개의 `Container`를 `Column` 또는 `Row`로 배치하여 정렬 방식 확인
+- `margin`, `padding`, `color` 등 스타일 적용
+
+---
+
+#### 2️⃣ **Stack 위젯**
+- 위젯들을 겹쳐서 배치할 수 있는 `Stack` 위젯 구조 학습
+- `Center`와 함께 사용하여 위젯 순서대로 겹치게 표현
+
+---
+
+#### 3️⃣ **ListView, ListTile**
+- 세로 방향으로 스크롤 가능한 리스트 뷰 구성
+- `ListTile`을 활용해 아이콘과 텍스트, 액션 버튼 구성
+
+---
+
+#### 4️⃣ **GridView**
+- `GridView.count`를 사용하여 2열 그리드 레이아웃 구성
+- `Container` 위젯에 색상과 텍스트 적용
+
+---
+
+#### 5️⃣ **PageView**
+- 페이지 단위로 좌우로 넘길 수 있는 뷰 구성 (`PageView`)
+- 각 페이지에 다른 배경색 적용
+
+---
+
+#### 6️⃣ **BottomNavigationBar**
+- 하단에 3개의 아이콘 탭을 가진 바를 구성
+- `Home`, `Person`, `Notification` 등의 메뉴 구성
+
+---
+
+#### 7️⃣ **Alignment, Center, Padding**
+- 다양한 위치 배치: `Align`, `Center`, `Padding` 위젯을 활용
+- 정중앙, 우측 정렬, 여백 주기 등 배치 연습
+
+---
+
+#### 8️⃣ **Expanded와 Flex**
+- `Column` 내에 `Expanded`를 사용하여 비율에 따라 화면 분할
+- `flex` 값에 따라 높이를 조절하는 방식 실습
+
+---
+
+#### 9️⃣ **SizedBox**
+- `SizedBox`로 고정 크기의 공간 확보 및 `Container` 배치 실습
+
+---
+
+#### 🔟 **Card 위젯**
+- `Card` 위젯으로 그림자와 테두리를 포함한 정보 카드 구성
+- `RoundedRectangleBorder`를 사용한 모서리 둥글기 설정 포함
+
+---
+
+#### 1️⃣1️⃣ **버튼 종류 실습**
+- `ElevatedButton`, `TextButton`, `IconButton`, `FloatingActionButton` 활용
+- 각 버튼의 사용 방식 및 클릭 이벤트 구성 실습
+
+---
+
+#### 1️⃣2️⃣ **Text 스타일링**
+- `Text` 위젯의 다양한 스타일 지정
+  - `fontSize`, `fontStyle`, `fontWeight`, `color`, `letterSpacing` 등
+
+---
+
+#### 1️⃣3️⃣ **이미지 삽입**
+- `Image.network()`를 통해 URL 이미지 삽입  
+- `Image.asset()`으로 로컬 이미지 사용 실습 (예: `assets/car1.jpg`)
+
+---
+
+#### 1️⃣4️⃣ **CircleAvatar**
+- 원형 아바타 안에 아이콘을 넣어 사용자 프로필 스타일 구성
+
+---
+
+#### 1️⃣5️⃣ **TabBar & TabBarView**
+- `AppBar`와 `TabBar`를 구성하여 탭 기반 화면 전환 구현
+- `Tab(icon/text)`과 `TabBarView`에 각기 다른 색의 화면 표시
 
