@@ -354,3 +354,15 @@ Status.logout 로그아웃
 - `AppBar`와 `TabBar`를 구성하여 탭 기반 화면 전환 구현
 - `Tab(icon/text)`과 `TabBarView`에 각기 다른 색의 화면 표시
 
+---
+
+### 1️⃣6️⃣ 컬러 박스 UI 배치 (과제 1번)
+- `Container`, `Column`, `Row`, `Expanded`를 활용해 다양한 색상 박스를 배치하는 실습  
+- 복잡한 박스 구조를 `flex`로 나누어 정렬  
+- 총 400x400 크기의 검은색 박스를 기준으로 내부를 색상 블록으로 구성  
+
+👉 **실습 코드:** `lib/project5-1.dart`  
+🖥 **실행 결과:**  
+![실행 결과](./images/project5_result1.png)  
+
+---
