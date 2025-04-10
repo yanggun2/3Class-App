@@ -363,6 +363,6 @@ Status.logout 로그아웃
 
 👉 **실습 코드:** `lib/project5-1.dart`  
 🖥 **실행 결과:**  
-![실행 결과](./images/project5_result1.png)  
+![실행 결과](./images/project5_result2.png)  
 
 ---
