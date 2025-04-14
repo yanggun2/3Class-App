@@ -1,0 +1,384 @@
+// 실습 2번
+main
+import 'package:a_7_2/test_DropDownButton.dart';
+import 'package:a_7_2/test_Gesture.dart';
+import 'package:a_7_2/test_TextField.dart';
+import 'package:a_7_2/test_CheckBox.dart';
+import 'package:a_7_2/test_Radio.dart';
+import 'package:a_7_2/test_dialog.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      ),
+      // home: TestTextField(),
+      // home: TestCheckBox(),
+      // home: TestRadio(),
+      // home: TestDropDownButton(),
+      // home: TestDialog(),
+      home: TestGesture(),
+    );
+  }
+}
+
+
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
+//   final String title;
+//
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
+//
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _counter = 0;
+//
+//   void _incrementCounter() {
+//     setState(() {
+//       _counter++;
+//     });
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//         title: Text(widget.title),
+//       ),
+//       body: Center(
+//
+//         child: Column(
+//
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             const Text('You have pushed the button this many times:'),
+//             Text(
+//               '$_counter',
+//               style: Theme.of(context).textTheme.headlineMedium,
+//             ),
+//           ],
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: _incrementCounter,
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.add),
+//       ), // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
+-------------------------------------------------------------
+test_TextField
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class TestTextField extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('TextField테스트')),
+      body: Padding(padding: EdgeInsets(16.0),
+      body: Column(
+        children: [
+          TextField(),
+
+          SizedBox(height: 32),
+
+          TextField(decoration: InputDecoration(labelText: '여기에 입력하세요')),
+
+          SizedBox(height: 32),
+
+          TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: '여기도 입력하세요',
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+-------------------------------------------------------------
+test_CheckBox
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class TestCheckBox extends StatefulWidget {
+  const TestCheckBox({super.key});
+
+  @override
+  State<TestCheckBox> createState() => _CheckBoxState();
+}
+
+class _CheckBoxState extends State<TestCheckBox> {
+  bool? isCheckd1 = false;
+  bool isCheckd2 = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('Checkbox / Switch테스트'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Checkbox(
+              value: isCheckd1,
+              onChanged: (value) {
+              setState(() {
+                isCheckd1 = value;
+              });
+            },
+            ),
+            SizedBox(height: 80),
+
+            Switch(value: isCheckd2, onChanged: (value) {
+              setState(() {
+                isCheckd2 = value;
+              });
+            },
+            ),
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+------------------------------------------------------------
+test_Radio
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+enum Gender {
+  MAN,
+  WOMAN,
+}
+
+class TestRadio extends StatefulWidget {
+  const TestRadio({super.key});
+
+  @override
+  State<TestRadio> createState() => _RadioState();
+}
+
+class _RadioState extends State<TestRadio> {
+  Gender? _gender = Gender.MAN;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('Radio 테스트'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ListTile(
+              title: Text('남자'),
+              leading: Radio(
+                value: Gender.MAN,
+                groupValue: _gender,
+                onChanged: (value) {
+                  setState(() {
+                    _gender = value;
+                  });
+                },
+              ),
+            ),
+
+            ListTile(
+              title: Text('여자'),
+              leading: Radio(
+                value: Gender.WOMAN,
+                groupValue: _gender,
+                onChanged: (value) {
+                  setState(() {
+                    _gender = value;
+                  });
+                },
+              ),
+            ),
+
+            SizedBox(height: 80),
+
+            RadioListTile(
+              title: Text('남자'),
+                value: Gender.MAN,
+                groupValue: _gender,
+                onChanged: (value) {
+                  setState(() {
+                    _gender = value;
+                  });
+                },
+              ),
+
+            RadioListTile(
+              title: Text('여자'),
+              value: Gender.WOMAN,
+              groupValue: _gender,
+              onChanged: (value) {
+                setState(() {
+                  _gender = value;
+                });
+              },
+            ),
+
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+-----------------------------------------------------------
+test_DropDownButton (오류...)
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class TestDropDownButton extends StatefulWidget {
+  const TestDropDownButton({super.key});
+
+  @override
+  State<TestDropDownButton> createState() => _DropDownButtonState();
+}
+
+class _DropDownButtonState extends State<TestDropDownButton> {
+  final _valueList = ['첫 번째', '두 번째', '세 번째'];
+  String? _selectedValue = '첫 번째';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text('DropDownButton 테스트'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DropdownButton(
+            value: _selectedValue,
+                items: _valueList.map((value) {
+              return DropdownMenuItem(
+              value: value,
+              child: Text(value),
+              );
+            }).toList(),
+            onChanged: (value) {
+            _selectedValue = value;
+
+            print(_selectedValue);
+            }),
+  },
+  ),
+          ],
+        ),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+----------------------------------------------------------
+test_dialog(오류...)
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class TestDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('Dialog 테스트')),
+    body: Padding(padding: EdgeInsets.all(16.0),
+    child: Column(
+    children: [
+      ElevatedButton(
+    onPressed: () async {
+        showDialog(
+        context: context,
+        barrierDismissble: true,
+    builder: (BuildContext context) {
+          return AlertDialog(
+          title: Text('제목'),
+    content: SingleChildScrollView(
+    child: ListBody(
+    children: [
+      Text('Alert Dialog입니다'),
+    Text('OK를 눌러 닫습니다'),
+    ],
+    ),
+    ),
+    actions: [
+      TextButton(
+    child: Text('OK'),
+    onPressed: () {
+      Navigator.of(context).pop(true);
+    },
+    ),
+    TextButton(
+    child: Text('Cancel'),
+    onPressed: () {
+    Navigator.of(context).pop(false);
+    },
+    ),
+    ]
+          );
+    },
+    );
+    }, child: Text('Alert Dialog')),
+    ],
+    ),
+    );
+  }
+}
+-----------------------------------------------------------
+test_Gesture
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class TestGesture extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('TextField테스트')),
+    body: Padding(
+    padding: EdgeInsets.all(16.0),
+    child: Column(
+    children: [
+    GestureDetector(
+    onTap: () {},
+    child: Text('클릭 돼?'),
+    ),
+
+    SizedBox(height: 80),
+
+    InkWell(
+    onTap: () {
+      print('InkWell!!');
+    },
+    child: Text('클릭 돼?'),
+    ),
+    ],
+    ),
+    ),
+    );
+  }
+}
