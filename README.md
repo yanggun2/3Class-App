@@ -405,3 +405,44 @@ Status.logout 로그아웃
 
 🖥 **실행 결과**:
 각 위젯에 대해 입력 필드, 체크박스, 라디오 버튼, 드롭다운, 다이얼로그, 제스처 등을 사용하여 UI를 구현합니다.
+
+---
+
+### 3️⃣ 위젯 생명주기 및 화면 전환 실습 교재 203~208p 정리 (과제)
+
+- `StatefulWidget`과 `StatelessWidget`의 동작 차이를 실습  
+- `Navigator.push()`와 `pop()`을 통한 화면 전환 흐름 확인  
+- 각 위젯의 생명주기 메서드 호출 시점 출력
+
+👉 **실습 코드:** `lib/lifecycle_test.dart`  
+
+🖥 **실행 결과:**
+
+**📍 화면 결과 1 – FirstPage**  
+![실행 결과](./images/lifecycle_result1.png)
+
+**📍 화면 결과 2 – SecondPage**  
+![실행 결과](./images/lifecycle_result2.png)
+
+**📍 콘솔 로그 결과 – 생명주기 출력**  
+![실행 결과](./images/lifecycle_result3.png)
+
+
+🧬 **호출 메서드 흐름 요약:**
+
+- 첫 화면(FirstPage) 실행 시:  
+  - `initState()` → `build()`  
+- 두 번째 페이지(SecondPage)로 이동 (`push`):  
+  - `initState()` → `build()` (SecondPage), FirstPage의 `build()`도 다시 호출됨  
+- 뒤로 가기 (`pop`) 시:  
+  - SecondPage의 `dispose()` 호출 → FirstPage의 `build()` 다시 호출됨  
+- 앱 종료 시:  
+  - FirstPage의 `dispose()` 호출
+
+🧠 **주의 사항:**  
+- `build()`는 화면이 바뀔 때마다 반복 호출됨  
+- 복잡한 연산이나 네트워크 요청은 반드시 `initState()`에서 처리해야 함
+
+
+---
+
