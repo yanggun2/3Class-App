@@ -455,4 +455,28 @@ Status.logout 로그아웃
 - 시험범위를 토대로 요약 총정리본 만들기
 - ai 사용해서 모의고사 문제 제작 후 풀이해보기 (10회차)
 
+🖥 **결과 검토:**
 
+**📍 24번 문제. 이벤트**
+- 문제: GestureDetector와 InkWell에 대한 설명으로 옳은 것은?
+GestureDetector는 터치 이벤트를 처리할 수 없다.
+InkWell은 터치 이벤트를 처리하며, 시각적 효과를 제공한다.
+GestureDetector는 터치 이벤트를 처리하며, 시각적 효과를 제공한다.
+InkWell은 터치 이벤트를 처리할 수 없다.
+- 정답: 2
+
+내 정답: 3
+GestureDetector: 터치 이벤트를 처리할 수 있는 위젯으로, 다양한 제스처를 감지할 수 있습니다. 예: GestureDetector(onTap: () { print('Tapped!'); });
+InkWell: 터치 이벤트를 처리하며, 터치 시 잉크 효과를 제공하는 위젯입니다. 예: InkWell(onTap: () { print('Tapped!'); }, child: Container(width: 100, height: 50));
+두 위젯 모두 터치 이벤트를 처리할 수 있지만, **InkWell은 시각적 효과를 추가로 제공**합니다.
+
+**📍 20번 문제. 버튼 등 위젯(1)**
+- 문제: 버튼 계열 위젯에 대한 설명으로 옳은 것은?
+ElevatedButton은 플랫한 디자인의 버튼이다.
+TextButton은 텍스트만 표시되는 버튼이다.
+IconButton은 텍스트와 아이콘을 함께 표시한다.
+FloatingActionButton은 정적인 버튼으로, 화면 이동에 사용된다.
+정답: 2
+
+내 정답: 4
+FloatingActionButton: 모바일 앱 UI에서 자주 사용되는 원형 버튼으로, 일반적으로 화면의 오른쪽 하단에 위치하며 사용자가 자주 수행하는 주요 작업(예: 추가, 작성, 채팅 등)을 실행할 수 있도록 돕는 중요한 액션 버튼
