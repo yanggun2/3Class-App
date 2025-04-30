@@ -446,7 +446,6 @@ Status.logout 로그아웃
 - `build()`는 화면이 바뀔 때마다 반복 호출됨  
 - 복잡한 연산이나 네트워크 요청은 반드시 `initState()`에서 처리해야 함
 
-
 ---
 
 ### **📌 7주차 - 중간고사 공부 **
@@ -483,3 +482,75 @@ FloatingActionButton은 정적인 버튼으로, 화면 이동에 사용된다.
 
 내 정답: 4
 FloatingActionButton: 모바일 앱 UI에서 자주 사용되는 원형 버튼으로, 일반적으로 화면의 오른쪽 하단에 위치하며 사용자가 자주 수행하는 주요 작업(예: 추가, 작성, 채팅 등)을 실행할 수 있도록 돕는 중요한 액션 버튼
+
+---
+
+### **📌 7주차 - BottomNavigationBar를 활용한 다중 페이지 UI 구성**
+
+#### 1️⃣ 앱 기본 구조 및 화면 전환 구현
+- **`main.dart`에서 앱의 진입점 구성**
+  - `MyApp` 클래스: `MaterialApp` 사용하여 앱 전체 테마 및 홈 설정  
+  - `MyHomePage` 클래스: `StatefulWidget`으로 정의되어 `BottomNavigationBar` 상태를 저장하고 페이지 전환 구현  
+  - `AppBar`, `BottomNavigationBar`, `Scaffold` 사용으로 전체 구조 설계
+
+- **3개의 화면 구성**
+  - `Page1()`, `Page2()`, `Page3()` 세 페이지를 탭으로 이동 가능  
+  - `_index` 상태값을 기반으로 body를 동적으로 변경
+
+👉 **핵심 위젯:**  
+`BottomNavigationBar`, `StatefulWidget`, `setState()`, `Scaffold`, `AppBar`
+
+🖥 **실습 코드:** `main.dart`  
+🖥 **실행 결과:** 하단 탭을 누를 때마다 페이지가 변경되는 3페이지 구조 앱
+
+---
+
+#### 2️⃣ Page1 - 택시 메뉴와 이미지 슬라이드, 공지 리스트
+
+- **상단 택시 아이콘 메뉴**
+  - `Row` 2개로 구성된 7~8개의 아이콘 버튼 (택시), `InkWell`로 클릭 가능하게 구성  
+  - `visible` 파라미터를 통해 마지막 아이콘은 숨기기 기능도 적용
+
+- **중간 영역: 이미지 캐러셀**
+  - `carousel_slider` 패키지를 사용한 `CarouselSlider`로 이미지 자동 슬라이딩 구현  
+  - 외부 이미지 URL을 사용한 이미지 출력
+
+- **하단 영역: 공지사항 리스트**
+  - `ListTile` 10개를 생성하여 이벤트 공지사항 형태로 나열  
+  - `ListView` + `shrinkWrap: true`로 스크롤 충돌 방지
+
+👉 **핵심 위젯 및 기술:**  
+`Opacity`, `InkWell`, `CarouselSlider`, `ListTile`, `ListView`, `dummyItems` 활용
+
+🖥 **실습 코드:** `page1.dart`  
+🖥 **실행 결과:**  
+- 택시 아이콘 메뉴 클릭 가능  
+- 이미지 슬라이더 자동 재생  
+- 공지사항 리스트 출력
+
+---
+
+#### 3️⃣ Page2 - 단일 텍스트 UI
+
+- **중앙 텍스트 출력**
+  - 단순하게 `"이용 서비스"`라는 텍스트를 화면 가운데에 출력
+
+👉 **핵심 위젯:**  
+`Center`, `Text`
+
+🖥 **실습 코드:** `page2.dart`  
+🖥 **실행 결과:** `이용 서비스` 텍스트 출력
+
+---
+
+#### 4️⃣ Page3 - 단일 텍스트 UI
+
+- **중앙 텍스트 출력**
+  - `"내 정보"`라는 텍스트를 화면 가운데에 출력
+
+👉 **핵심 위젯:**  
+`Center`, `Text`
+
+🖥 **실습 코드:** `page3.dart`  
+🖥 **실행 결과:** `내 정보` 텍스트 출력
+
