@@ -485,7 +485,7 @@ FloatingActionButton: 모바일 앱 UI에서 자주 사용되는 원형 버튼�
 
 ---
 
-### **📌 7주차 - BottomNavigationBar를 활용한 다중 페이지 UI 구성**
+### **📌 8주차 - BottomNavigationBar를 활용한 다중 페이지 UI 구성**
 
 #### 1️⃣ 앱 기본 구조 및 화면 전환 구현
 - **`main.dart`에서 앱의 진입점 구성**
